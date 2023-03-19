@@ -87,12 +87,16 @@ enum UsbPid {
   @JsonValue(0x0407)
   yk4OtpFidoCcid,
   @JsonValue(0x0410)
-  ykpOtpFido;
+  ykpOtpFido,
+  @JsonValue(0x42D4)
+  canokey;
 
   int get value => _$UsbPidEnumMap[this]!;
 
   String get displayName {
     switch (this) {
+      case UsbPid.canokey:
+        return 'CanoKey';
       case UsbPid.yksOtp:
         return 'YubiKey Standard';
       case UsbPid.ykpOtpFido:
@@ -118,6 +122,10 @@ enum UsbPid {
   static UsbPid fromValue(int value) {
     return UsbPid.values.firstWhere((pid) => pid.value == value);
   }
+}
+
+class JsonEnum {
+  const JsonEnum({required bool alwaysCreate});
 }
 
 @freezed

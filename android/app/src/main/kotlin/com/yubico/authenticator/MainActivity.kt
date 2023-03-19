@@ -324,7 +324,7 @@ class MainActivity : FlutterFragmentActivity() {
 
     companion object {
         const val TAG = "MainActivity"
-        const val YUBICO_VENDOR_ID = 4176
+        const val YUBICO_VENDOR_ID = 8352
         const val FLAG_SECURE = WindowManager.LayoutParams.FLAG_SECURE
     }
 
